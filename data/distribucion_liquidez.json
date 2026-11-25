@@ -1,0 +1,235 @@
+{
+  "descripcion": "Red de distribución de efectivo con cuello de botella intencional - OptiFin Módulo 4",
+  "semilla_generacion": 42,
+  "dirigido": true,
+  "ponderado": true,
+  "disponibilidad_bovedas": {
+    "BOVEDA-CENTRAL-LIMA": 2000000.0,
+    "BOVEDA-CENTRAL-BOGOTA": 1500000.0
+  },
+  "demanda_agencias": {
+    "AG-LIMA-01": 350000.0,
+    "AG-LIMA-02": 420000.0,
+    "AG-NORTE-01": 280000.0,
+    "AG-NORTE-02": 190000.0,
+    "AG-SUR-01": 310000.0,
+    "AG-ESTE-01": 240000.0,
+    "ATM-LIMA-PLAZA": 50000.0,
+    "ATM-NORTE-MALL": 60000.0,
+    "ATM-SUR-CENTRO": 45000.0
+  },
+  "nodos": [
+    {
+      "id": "BOVEDA-CENTRAL-LIMA",
+      "tipo": "boveda_central",
+      "atributos": {
+        "oferta": 2000000.0,
+        "region": "Lima"
+      }
+    },
+    {
+      "id": "BOVEDA-CENTRAL-BOGOTA",
+      "tipo": "boveda_central",
+      "atributos": {
+        "oferta": 1500000.0,
+        "region": "Bogota"
+      }
+    },
+    {
+      "id": "REG-NORTE",
+      "tipo": "boveda_regional",
+      "atributos": {
+        "region": "Norte"
+      }
+    },
+    {
+      "id": "REG-SUR",
+      "tipo": "boveda_regional",
+      "atributos": {
+        "region": "Sur"
+      }
+    },
+    {
+      "id": "REG-ESTE",
+      "tipo": "boveda_regional",
+      "atributos": {
+        "region": "Este"
+      }
+    },
+    {
+      "id": "AG-LIMA-01",
+      "tipo": "agencia",
+      "atributos": {
+        "demanda": 350000.0,
+        "ciudad": "Lima-Centro"
+      }
+    },
+    {
+      "id": "AG-LIMA-02",
+      "tipo": "agencia",
+      "atributos": {
+        "demanda": 420000.0,
+        "ciudad": "Lima-Norte"
+      }
+    },
+    {
+      "id": "AG-NORTE-01",
+      "tipo": "agencia",
+      "atributos": {
+        "demanda": 280000.0,
+        "ciudad": "Trujillo"
+      }
+    },
+    {
+      "id": "AG-NORTE-02",
+      "tipo": "agencia",
+      "atributos": {
+        "demanda": 190000.0,
+        "ciudad": "Chiclayo"
+      }
+    },
+    {
+      "id": "AG-SUR-01",
+      "tipo": "agencia",
+      "atributos": {
+        "demanda": 310000.0,
+        "ciudad": "Arequipa"
+      }
+    },
+    {
+      "id": "AG-ESTE-01",
+      "tipo": "agencia",
+      "atributos": {
+        "demanda": 240000.0,
+        "ciudad": "Cusco"
+      }
+    },
+    {
+      "id": "ATM-LIMA-PLAZA",
+      "tipo": "atm",
+      "atributos": {
+        "demanda": 50000.0
+      }
+    },
+    {
+      "id": "ATM-NORTE-MALL",
+      "tipo": "atm",
+      "atributos": {
+        "demanda": 60000.0
+      }
+    },
+    {
+      "id": "ATM-SUR-CENTRO",
+      "tipo": "atm",
+      "atributos": {
+        "demanda": 45000.0
+      }
+    }
+  ],
+  "aristas": [
+    {
+      "origen": "BOVEDA-CENTRAL-LIMA",
+      "destino": "REG-NORTE",
+      "capacidad": 800000.0,
+      "costo_unitario": 0.001,
+      "disponible": true,
+      "canal": "blindado"
+    },
+    {
+      "origen": "BOVEDA-CENTRAL-LIMA",
+      "destino": "REG-SUR",
+      "capacidad": 700000.0,
+      "costo_unitario": 0.0012,
+      "disponible": true,
+      "canal": "blindado"
+    },
+    {
+      "origen": "BOVEDA-CENTRAL-LIMA",
+      "destino": "REG-ESTE",
+      "capacidad": 600000.0,
+      "costo_unitario": 0.0015,
+      "disponible": true,
+      "canal": "blindado"
+    },
+    {
+      "origen": "BOVEDA-CENTRAL-BOGOTA",
+      "destino": "REG-NORTE",
+      "capacidad": 500000.0,
+      "costo_unitario": 0.0014,
+      "disponible": true,
+      "canal": "blindado"
+    },
+    {
+      "origen": "REG-NORTE",
+      "destino": "AG-LIMA-01",
+      "capacidad": 400000.0,
+      "costo_unitario": 0.0008,
+      "disponible": true,
+      "canal": "blindado_local"
+    },
+    {
+      "origen": "REG-NORTE",
+      "destino": "AG-LIMA-02",
+      "capacidad": 300000.0,
+      "costo_unitario": 0.0009,
+      "disponible": true,
+      "canal": "blindado_local"
+    },
+    {
+      "origen": "REG-NORTE",
+      "destino": "AG-NORTE-01",
+      "capacidad": 350000.0,
+      "costo_unitario": 0.001,
+      "disponible": true,
+      "canal": "blindado_local"
+    },
+    {
+      "origen": "REG-NORTE",
+      "destino": "AG-NORTE-02",
+      "capacidad": 250000.0,
+      "costo_unitario": 0.0011,
+      "disponible": true,
+      "canal": "blindado_local"
+    },
+    {
+      "origen": "REG-NORTE",
+      "destino": "ATM-NORTE-MALL",
+      "capacidad": 80000.0,
+      "costo_unitario": 0.0005,
+      "disponible": true,
+      "canal": "remesa"
+    },
+    {
+      "origen": "REG-SUR",
+      "destino": "AG-SUR-01",
+      "capacidad": 400000.0,
+      "costo_unitario": 0.001,
+      "disponible": true,
+      "canal": "blindado_local"
+    },
+    {
+      "origen": "REG-SUR",
+      "destino": "ATM-SUR-CENTRO",
+      "capacidad": 60000.0,
+      "costo_unitario": 0.0005,
+      "disponible": true,
+      "canal": "remesa"
+    },
+    {
+      "origen": "REG-ESTE",
+      "destino": "AG-ESTE-01",
+      "capacidad": 300000.0,
+      "costo_unitario": 0.0013,
+      "disponible": true,
+      "canal": "blindado_local"
+    },
+    {
+      "origen": "REG-NORTE",
+      "destino": "ATM-LIMA-PLAZA",
+      "capacidad": 70000.0,
+      "costo_unitario": 0.0005,
+      "disponible": true,
+      "canal": "remesa"
+    }
+  ]
+}

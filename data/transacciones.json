@@ -1,0 +1,929 @@
+{
+  "descripcion": "Red de transacciones financieras con clusters de fraude inyectados - OptiFin Módulo 2",
+  "semilla_generacion": 42,
+  "dirigido": true,
+  "ponderado": true,
+  "nodos": [
+    {
+      "id": "MUL-001",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "MUL-002",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "MUL-003",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "MUL-004",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "MUL-005",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "MUL-006",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "MUL-007",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "MUL-008",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "MUL-009",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "MUL-010",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "mulas",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "FAC-001",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "fachada",
+        "sospechoso": true
+      }
+    },
+    {
+      "id": "FAC-002",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "fachada",
+        "sospechoso": true
+      }
+    },
+    {
+      "id": "FAC-003",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "fachada",
+        "sospechoso": true
+      }
+    },
+    {
+      "id": "FAC-004",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "fachada",
+        "sospechoso": true
+      }
+    },
+    {
+      "id": "FAC-005",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "fachada",
+        "sospechoso": true
+      }
+    },
+    {
+      "id": "FAC-006",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "fachada",
+        "sospechoso": true
+      }
+    },
+    {
+      "id": "FAC-007",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "fachada",
+        "sospechoso": true
+      }
+    },
+    {
+      "id": "FAC-008",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "fachada",
+        "sospechoso": true
+      }
+    },
+    {
+      "id": "NOM-001",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-002",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-003",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-004",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-005",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-006",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-007",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-008",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-009",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-010",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-011",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "NOM-012",
+      "tipo": "cliente",
+      "atributos": {
+        "grupo_real": "nomina",
+        "sospechoso": false
+      }
+    },
+    {
+      "id": "EMPRESA-CORP",
+      "tipo": "cuenta",
+      "atributos": {
+        "grupo_real": "concentrador",
+        "sospechoso": false
+      }
+    }
+  ],
+  "aristas": [
+    {
+      "origen": "MUL-001",
+      "destino": "MUL-002",
+      "monto": 2195.083890736802,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-05T00:00:00",
+      "comision": 0.6300351820429432,
+      "riesgo": 0.478123758352088,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-001",
+      "destino": "MUL-003",
+      "monto": 7278.256001898708,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-02T00:00:00",
+      "comision": 1.3706154812458147,
+      "riesgo": 0.43042859142029566,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-001",
+      "destino": "MUL-004",
+      "monto": 2232.418311616949,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-12T00:00:00",
+      "comision": 0.5623655697643241,
+      "riesgo": 0.5768743508361769,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-002",
+      "destino": "MUL-003",
+      "monto": 3550.933675355858,
+      "n_transferencias": 7,
+      "timestamp": "2026-11-25T00:00:00",
+      "comision": 2.5196764257826647,
+      "riesgo": 0.5907295182111258,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-002",
+      "destino": "MUL-004",
+      "monto": 6596.272334232088,
+      "n_transferencias": 6,
+      "timestamp": "2026-11-18T00:00:00",
+      "comision": 2.5426330960267842,
+      "riesgo": 0.40227456588732136,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-002",
+      "destino": "MUL-005",
+      "monto": 7445.48728090817,
+      "n_transferencias": 4,
+      "timestamp": "2026-10-31T00:00:00",
+      "comision": 0.9444008264287871,
+      "riesgo": 0.4544178249341236,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-003",
+      "destino": "MUL-004",
+      "monto": 2797.24015685482,
+      "n_transferencias": 5,
+      "timestamp": "2026-11-01T00:00:00",
+      "comision": 1.2598546012746747,
+      "riesgo": 0.52564278316962,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-003",
+      "destino": "MUL-005",
+      "monto": 4063.262764331702,
+      "n_transferencias": 7,
+      "timestamp": "2026-11-14T00:00:00",
+      "comision": 0.8216612401846721,
+      "riesgo": 0.5607987078851449,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-003",
+      "destino": "MUL-006",
+      "monto": 2614.641545011974,
+      "n_transferencias": 6,
+      "timestamp": "2026-11-22T00:00:00",
+      "comision": 1.303627875377023,
+      "riesgo": 0.6200239298230552,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-004",
+      "destino": "MUL-005",
+      "monto": 6503.346733002744,
+      "n_transferencias": 5,
+      "timestamp": "2026-10-28T00:00:00",
+      "comision": 1.9091436724298472,
+      "riesgo": 0.4160385342794818,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-004",
+      "destino": "MUL-006",
+      "monto": 9684.727861153911,
+      "n_transferencias": 5,
+      "timestamp": "2026-11-18T00:00:00",
+      "comision": 2.2106354420302936,
+      "riesgo": 0.7032692833643444,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-004",
+      "destino": "MUL-007",
+      "monto": 5536.600358473797,
+      "n_transferencias": 5,
+      "timestamp": "2026-11-13T00:00:00",
+      "comision": 2.1682208532815004,
+      "riesgo": 0.4569289340046297,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-005",
+      "destino": "MUL-006",
+      "monto": 7227.366360146008,
+      "n_transferencias": 4,
+      "timestamp": "2026-11-14T00:00:00",
+      "comision": 1.5229125015336824,
+      "riesgo": 0.6392416829378336,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-005",
+      "destino": "MUL-007",
+      "monto": 6952.83064793707,
+      "n_transferencias": 7,
+      "timestamp": "2026-11-23T00:00:00",
+      "comision": 2.1955916556831827,
+      "riesgo": 0.4856838238029992,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-005",
+      "destino": "MUL-008",
+      "monto": 4105.593048917368,
+      "n_transferencias": 6,
+      "timestamp": "2026-11-11T00:00:00",
+      "comision": 2.8209388310909222,
+      "riesgo": 0.6408566854516596,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-006",
+      "destino": "MUL-007",
+      "monto": 4529.40532843951,
+      "n_transferencias": 8,
+      "timestamp": "2026-11-18T00:00:00",
+      "comision": 3.258603448295591,
+      "riesgo": 0.4195782816422494,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-006",
+      "destino": "MUL-008",
+      "monto": 8279.357246015472,
+      "n_transferencias": 3,
+      "timestamp": "2026-10-30T00:00:00",
+      "comision": 0.7813977444267947,
+      "riesgo": 0.42316601182404157,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-006",
+      "destino": "MUL-009",
+      "monto": 8835.667486486818,
+      "n_transferencias": 7,
+      "timestamp": "2026-10-27T00:00:00",
+      "comision": 1.5810980662357381,
+      "riesgo": 0.629403532853208,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-007",
+      "destino": "MUL-008",
+      "monto": 5579.044450181711,
+      "n_transferencias": 8,
+      "timestamp": "2026-11-13T00:00:00",
+      "comision": 1.647616532793768,
+      "riesgo": 0.4863196276928942,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-007",
+      "destino": "MUL-009",
+      "monto": 4049.384546478895,
+      "n_transferencias": 7,
+      "timestamp": "2026-11-08T00:00:00",
+      "comision": 2.3368407726259135,
+      "riesgo": 0.7142380092608669,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-007",
+      "destino": "MUL-010",
+      "monto": 3710.7019214268103,
+      "n_transferencias": 5,
+      "timestamp": "2026-11-13T00:00:00",
+      "comision": 2.4950752129902205,
+      "riesgo": 0.5783342027867626,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-008",
+      "destino": "MUL-009",
+      "monto": 8716.602695399994,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-23T00:00:00",
+      "comision": 0.4834095832179133,
+      "riesgo": 0.4559937006028576,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-008",
+      "destino": "MUL-010",
+      "monto": 6651.990439709396,
+      "n_transferencias": 6,
+      "timestamp": "2026-11-04T00:00:00",
+      "comision": 1.5234415480188002,
+      "riesgo": 0.6085609499263949,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-009",
+      "destino": "MUL-010",
+      "monto": 3961.030135858143,
+      "n_transferencias": 7,
+      "timestamp": "2026-11-11T00:00:00",
+      "comision": 2.249032509402805,
+      "riesgo": 0.7298508014829335,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "FAC-001",
+      "destino": "FAC-003",
+      "monto": 357439.4930629784,
+      "n_transferencias": 3,
+      "timestamp": "2026-10-28T00:00:00",
+      "comision": 20.307896286397035,
+      "riesgo": 0.7027250450265992,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-001",
+      "destino": "FAC-004",
+      "monto": 438755.23954804573,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-25T00:00:00",
+      "comision": 39.28829895734291,
+      "riesgo": 0.7776885861115138,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-001",
+      "destino": "FAC-005",
+      "monto": 386667.73926898686,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-05T00:00:00",
+      "comision": 27.84482968899354,
+      "riesgo": 0.6696188856176566,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-001",
+      "destino": "FAC-006",
+      "monto": 289577.83378409164,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-20T00:00:00",
+      "comision": 26.987256861302654,
+      "riesgo": 0.6391537038623133,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-001",
+      "destino": "FAC-007",
+      "monto": 145780.92413522353,
+      "n_transferencias": 3,
+      "timestamp": "2026-10-30T00:00:00",
+      "comision": 15.83922166012549,
+      "riesgo": 0.7985749302911185,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-001",
+      "destino": "FAC-008",
+      "monto": 376409.30136803543,
+      "n_transferencias": 4,
+      "timestamp": "2026-11-02T00:00:00",
+      "comision": 49.00930221548004,
+      "riesgo": 0.7864471593353304,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-002",
+      "destino": "FAC-003",
+      "monto": 428739.4718819964,
+      "n_transferencias": 4,
+      "timestamp": "2026-11-04T00:00:00",
+      "comision": 12.430713153835745,
+      "riesgo": 0.7846858255963889,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-003",
+      "destino": "FAC-005",
+      "monto": 225240.03356580163,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-04T00:00:00",
+      "comision": 28.29091284660158,
+      "riesgo": 0.642351468553893,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-003",
+      "destino": "FAC-006",
+      "monto": 285323.48738289333,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-15T00:00:00",
+      "comision": 15.355162966845965,
+      "riesgo": 0.6770760845580458,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-003",
+      "destino": "FAC-007",
+      "monto": 141576.71352446175,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-05T00:00:00",
+      "comision": 45.74390058527576,
+      "riesgo": 0.9008723900888113,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-003",
+      "destino": "FAC-008",
+      "monto": 317591.11131851224,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-18T00:00:00",
+      "comision": 14.640656331669737,
+      "riesgo": 0.6463091470537587,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-004",
+      "destino": "FAC-006",
+      "monto": 363847.76971630135,
+      "n_transferencias": 2,
+      "timestamp": "2026-11-10T00:00:00",
+      "comision": 41.33736489949895,
+      "riesgo": 0.6666434700266571,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-004",
+      "destino": "FAC-007",
+      "monto": 219431.4492079683,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-12T00:00:00",
+      "comision": 26.016110061650373,
+      "riesgo": 0.8551765473109476,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-005",
+      "destino": "FAC-007",
+      "monto": 370237.00434467953,
+      "n_transferencias": 3,
+      "timestamp": "2026-11-13T00:00:00",
+      "comision": 9.91710645101618,
+      "riesgo": 0.6670565252495789,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-005",
+      "destino": "FAC-008",
+      "monto": 123395.21431489331,
+      "n_transferencias": 4,
+      "timestamp": "2026-11-21T00:00:00",
+      "comision": 25.818263078043532,
+      "riesgo": 0.9060700839247029,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "FAC-006",
+      "destino": "FAC-007",
+      "monto": 70235.33180995249,
+      "n_transferencias": 1,
+      "timestamp": "2026-10-31T00:00:00",
+      "comision": 49.9677110785727,
+      "riesgo": 0.8926096547779832,
+      "disponible": true,
+      "canal": "swift"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-001",
+      "monto": 4913.644440133269,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-24T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-002",
+      "monto": 7591.546552753836,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-22T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-003",
+      "monto": 11170.764356839663,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-22T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-004",
+      "monto": 6721.271511303787,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-24T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-005",
+      "monto": 5754.2259944632915,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-22T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-006",
+      "monto": 5924.618446048822,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-22T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-007",
+      "monto": 11637.199947307221,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-20T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-008",
+      "monto": 9125.906151581334,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-21T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-009",
+      "monto": 4815.773014829545,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-22T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-010",
+      "monto": 5350.457636520487,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-23T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-011",
+      "monto": 8423.032471938179,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-25T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "EMPRESA-CORP",
+      "destino": "NOM-012",
+      "monto": 4018.1393575503844,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-21T00:00:00",
+      "comision": 1.5,
+      "riesgo": 0.02,
+      "disponible": true,
+      "canal": "spei"
+    },
+    {
+      "origen": "NOM-001",
+      "destino": "NOM-002",
+      "monto": 585.7479093612246,
+      "n_transferencias": 2,
+      "timestamp": "2026-11-15T00:00:00",
+      "comision": 1.0,
+      "riesgo": 0.03,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "NOM-004",
+      "destino": "NOM-005",
+      "monto": 1215.1827756634025,
+      "n_transferencias": 2,
+      "timestamp": "2026-11-07T00:00:00",
+      "comision": 1.0,
+      "riesgo": 0.03,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "NOM-007",
+      "destino": "NOM-008",
+      "monto": 736.1490919092249,
+      "n_transferencias": 2,
+      "timestamp": "2026-11-09T00:00:00",
+      "comision": 1.0,
+      "riesgo": 0.03,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "NOM-010",
+      "destino": "NOM-011",
+      "monto": 620.1671978608804,
+      "n_transferencias": 2,
+      "timestamp": "2026-11-09T00:00:00",
+      "comision": 1.0,
+      "riesgo": 0.03,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-003",
+      "destino": "FAC-002",
+      "monto": 1271.843453503029,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-06T00:00:00",
+      "comision": 0.5,
+      "riesgo": 0.5585457605910388,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-007",
+      "destino": "FAC-002",
+      "monto": 3278.7016405527397,
+      "n_transferencias": 1,
+      "timestamp": "2026-10-28T00:00:00",
+      "comision": 0.5,
+      "riesgo": 0.4736757172521632,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-001",
+      "destino": "FAC-002",
+      "monto": 3629.49265789009,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-12T00:00:00",
+      "comision": 0.5,
+      "riesgo": 0.4695680771532268,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-006",
+      "destino": "FAC-005",
+      "monto": 3678.903899079317,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-19T00:00:00",
+      "comision": 0.5,
+      "riesgo": 0.3942551588386728,
+      "disponible": true,
+      "canal": "app_movil"
+    },
+    {
+      "origen": "MUL-005",
+      "destino": "FAC-007",
+      "monto": 3686.760891839885,
+      "n_transferencias": 1,
+      "timestamp": "2026-11-21T00:00:00",
+      "comision": 0.5,
+      "riesgo": 0.38999912393962866,
+      "disponible": true,
+      "canal": "app_movil"
+    }
+  ]
+}

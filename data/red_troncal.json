@@ -1,0 +1,436 @@
+{
+  "descripcion": "Red de infraestructura de conectividad para la red troncal financiera - OptiFin Módulo 3",
+  "semilla_generacion": 42,
+  "dirigido": false,
+  "ponderado": true,
+  "nodos": [
+    {
+      "id": "SEDE-CENTRAL",
+      "tipo": "entidad",
+      "atributos": {
+        "ciudad": "Lima",
+        "region": "Centro"
+      }
+    },
+    {
+      "id": "SEDE-REGIONAL-N",
+      "tipo": "entidad",
+      "atributos": {
+        "ciudad": "Trujillo",
+        "region": "Norte"
+      }
+    },
+    {
+      "id": "SEDE-REGIONAL-S",
+      "tipo": "entidad",
+      "atributos": {
+        "ciudad": "Arequipa",
+        "region": "Sur"
+      }
+    },
+    {
+      "id": "AG-001",
+      "tipo": "agencia",
+      "atributos": {
+        "ciudad": "Ciudad-1",
+        "region": "Centro"
+      }
+    },
+    {
+      "id": "AG-002",
+      "tipo": "agencia",
+      "atributos": {
+        "ciudad": "Ciudad-2",
+        "region": "Norte"
+      }
+    },
+    {
+      "id": "AG-003",
+      "tipo": "agencia",
+      "atributos": {
+        "ciudad": "Ciudad-3",
+        "region": "Norte"
+      }
+    },
+    {
+      "id": "AG-004",
+      "tipo": "agencia",
+      "atributos": {
+        "ciudad": "Ciudad-4",
+        "region": "Centro"
+      }
+    },
+    {
+      "id": "AG-005",
+      "tipo": "agencia",
+      "atributos": {
+        "ciudad": "Ciudad-5",
+        "region": "Sur"
+      }
+    },
+    {
+      "id": "AG-006",
+      "tipo": "agencia",
+      "atributos": {
+        "ciudad": "Ciudad-6",
+        "region": "Norte"
+      }
+    },
+    {
+      "id": "AG-007",
+      "tipo": "agencia",
+      "atributos": {
+        "ciudad": "Ciudad-7",
+        "region": "Norte"
+      }
+    },
+    {
+      "id": "AG-008",
+      "tipo": "agencia",
+      "atributos": {
+        "ciudad": "Ciudad-8",
+        "region": "Norte"
+      }
+    },
+    {
+      "id": "AG-009",
+      "tipo": "agencia",
+      "atributos": {
+        "ciudad": "Ciudad-9",
+        "region": "Centro"
+      }
+    },
+    {
+      "id": "ATM-001",
+      "tipo": "atm",
+      "atributos": {
+        "ubicacion": "Plaza-1"
+      }
+    },
+    {
+      "id": "ATM-002",
+      "tipo": "atm",
+      "atributos": {
+        "ubicacion": "Plaza-2"
+      }
+    },
+    {
+      "id": "ATM-003",
+      "tipo": "atm",
+      "atributos": {
+        "ubicacion": "Plaza-3"
+      }
+    },
+    {
+      "id": "ATM-004",
+      "tipo": "atm",
+      "atributos": {
+        "ubicacion": "Plaza-4"
+      }
+    },
+    {
+      "id": "ATM-005",
+      "tipo": "atm",
+      "atributos": {
+        "ubicacion": "Plaza-5"
+      }
+    },
+    {
+      "id": "ATM-006",
+      "tipo": "atm",
+      "atributos": {
+        "ubicacion": "Plaza-6"
+      }
+    }
+  ],
+  "aristas": [
+    {
+      "origen": "SEDE-CENTRAL",
+      "destino": "SEDE-REGIONAL-N",
+      "costo_instalacion": 6024.951761715075,
+      "costo_operativo": 670.3338723338379,
+      "tiempo": 13.180498006225246,
+      "disponible": true,
+      "canal": "fibra_optica"
+    },
+    {
+      "origen": "SEDE-CENTRAL",
+      "destino": "SEDE-REGIONAL-S",
+      "costo_instalacion": 10904.925124490397,
+      "costo_operativo": 315.8913397408918,
+      "tiempo": 6.405428597923887,
+      "disponible": true,
+      "canal": "fibra_optica"
+    },
+    {
+      "origen": "SEDE-CENTRAL",
+      "destino": "AG-001",
+      "costo_instalacion": 5032.131728620174,
+      "costo_operativo": 107.96079090515909,
+      "tiempo": 5.386051808239782,
+      "disponible": true,
+      "canal": "enlace_dedicado"
+    },
+    {
+      "origen": "SEDE-REGIONAL-S",
+      "destino": "AG-002",
+      "costo_instalacion": 4517.1189257699525,
+      "costo_operativo": 234.76271388515607,
+      "tiempo": 6.338288498767953,
+      "disponible": true,
+      "canal": "enlace_dedicado"
+    },
+    {
+      "origen": "SEDE-CENTRAL",
+      "destino": "AG-003",
+      "costo_instalacion": 6188.836369929361,
+      "costo_operativo": 202.07515495539758,
+      "tiempo": 4.865753997741379,
+      "disponible": true,
+      "canal": "enlace_dedicado"
+    },
+    {
+      "origen": "SEDE-REGIONAL-N",
+      "destino": "AG-004",
+      "costo_instalacion": 2613.261659119092,
+      "costo_operativo": 213.9781901912012,
+      "tiempo": 7.307752565815541,
+      "disponible": true,
+      "canal": "enlace_dedicado"
+    },
+    {
+      "origen": "SEDE-REGIONAL-N",
+      "destino": "AG-005",
+      "costo_instalacion": 6842.769639646282,
+      "costo_operativo": 318.91953600814537,
+      "tiempo": 9.43473709745641,
+      "disponible": true,
+      "canal": "enlace_dedicado"
+    },
+    {
+      "origen": "SEDE-REGIONAL-N",
+      "destino": "AG-006",
+      "costo_instalacion": 2472.801188470749,
+      "costo_operativo": 187.95348442212787,
+      "tiempo": 10.543677593933321,
+      "disponible": true,
+      "canal": "enlace_dedicado"
+    },
+    {
+      "origen": "SEDE-REGIONAL-N",
+      "destino": "AG-007",
+      "costo_instalacion": 5464.112871540572,
+      "costo_operativo": 311.37155086447706,
+      "tiempo": 3.5498926038679466,
+      "disponible": true,
+      "canal": "enlace_dedicado"
+    },
+    {
+      "origen": "SEDE-REGIONAL-N",
+      "destino": "AG-008",
+      "costo_instalacion": 7911.329123964547,
+      "costo_operativo": 356.5953163045441,
+      "tiempo": 13.397804001063236,
+      "disponible": true,
+      "canal": "enlace_dedicado"
+    },
+    {
+      "origen": "SEDE-REGIONAL-N",
+      "destino": "AG-009",
+      "costo_instalacion": 5814.1066655864015,
+      "costo_operativo": 209.44965369102528,
+      "tiempo": 7.442171605402592,
+      "disponible": true,
+      "canal": "enlace_dedicado"
+    },
+    {
+      "origen": "AG-001",
+      "destino": "AG-002",
+      "costo_instalacion": 4778.2910569937285,
+      "costo_operativo": 190.16601549192092,
+      "tiempo": 6.8730480453359055,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-001",
+      "destino": "AG-004",
+      "costo_instalacion": 2828.0940461517675,
+      "costo_operativo": 248.2189696082212,
+      "tiempo": 7.119998078832743,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-001",
+      "destino": "AG-008",
+      "costo_instalacion": 1612.350853664132,
+      "costo_operativo": 133.62701817004393,
+      "tiempo": 4.141927007805622,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-002",
+      "destino": "AG-004",
+      "costo_instalacion": 3794.0353285320803,
+      "costo_operativo": 147.2574231803129,
+      "tiempo": 9.316380717924348,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-002",
+      "destino": "AG-005",
+      "costo_instalacion": 2363.196276928942,
+      "costo_operativo": 175.43258280773563,
+      "tiempo": 4.101932868183482,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-002",
+      "destino": "AG-008",
+      "costo_instalacion": 4991.381622732886,
+      "costo_operativo": 166.61946992499895,
+      "tiempo": 2.727275297390351,
+      "disponible": false,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-002",
+      "destino": "AG-009",
+      "costo_instalacion": 3696.0611459608153,
+      "costo_operativo": 214.6534919417039,
+      "tiempo": 5.377279734397472,
+      "disponible": false,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-003",
+      "destino": "AG-009",
+      "costo_instalacion": 4022.5263677606813,
+      "costo_operativo": 195.8907627345177,
+      "tiempo": 6.295762643270361,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-004",
+      "destino": "AG-006",
+      "costo_instalacion": 3021.6783773418674,
+      "costo_operativo": 157.1330300759651,
+      "tiempo": 9.63052742016864,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-004",
+      "destino": "AG-007",
+      "costo_instalacion": 3252.051395676044,
+      "costo_operativo": 110.37081969012233,
+      "tiempo": 9.301022714758563,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-004",
+      "destino": "AG-008",
+      "costo_instalacion": 3736.323232031018,
+      "costo_operativo": 183.5249359444893,
+      "tiempo": 3.2227141483970785,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-005",
+      "destino": "AG-008",
+      "costo_instalacion": 2634.546199516356,
+      "costo_operativo": 83.3110462055915,
+      "tiempo": 9.432788930116937,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-006",
+      "destino": "AG-007",
+      "costo_instalacion": 1702.7380827296565,
+      "costo_operativo": 229.2616318646869,
+      "tiempo": 9.575595562383953,
+      "disponible": false,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-006",
+      "destino": "AG-009",
+      "costo_instalacion": 4162.107578400311,
+      "costo_operativo": 210.19185298218792,
+      "tiempo": 3.0271317159981024,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-007",
+      "destino": "AG-009",
+      "costo_instalacion": 4553.515643798401,
+      "costo_operativo": 151.9334498341508,
+      "tiempo": 3.6943856435366564,
+      "disponible": true,
+      "canal": "vpn_sd_wan"
+    },
+    {
+      "origen": "AG-004",
+      "destino": "ATM-001",
+      "costo_instalacion": 2368.4877402020684,
+      "costo_operativo": 89.89922999974291,
+      "tiempo": 3.6867478385531323,
+      "disponible": true,
+      "canal": "enlace_ATM"
+    },
+    {
+      "origen": "AG-006",
+      "destino": "ATM-002",
+      "costo_instalacion": 1763.8201846119089,
+      "costo_operativo": 101.75758410355905,
+      "tiempo": 1.4840167834730629,
+      "disponible": true,
+      "canal": "enlace_ATM"
+    },
+    {
+      "origen": "AG-004",
+      "destino": "ATM-003",
+      "costo_instalacion": 940.8569719179588,
+      "costo_operativo": 52.10342600070589,
+      "tiempo": 3.215686089697919,
+      "disponible": true,
+      "canal": "enlace_ATM"
+    },
+    {
+      "origen": "AG-004",
+      "destino": "ATM-004",
+      "costo_instalacion": 815.8198457672058,
+      "costo_operativo": 120.7840946548454,
+      "tiempo": 1.2354950675052936,
+      "disponible": true,
+      "canal": "enlace_ATM"
+    },
+    {
+      "origen": "AG-002",
+      "destino": "ATM-005",
+      "costo_instalacion": 2791.924028613482,
+      "costo_operativo": 135.96354002537464,
+      "tiempo": 1.2834293995546138,
+      "disponible": true,
+      "canal": "enlace_ATM"
+    },
+    {
+      "origen": "AG-004",
+      "destino": "ATM-006",
+      "costo_instalacion": 1412.6499807220034,
+      "costo_operativo": 98.54144991504907,
+      "tiempo": 3.1569357255790185,
+      "disponible": true,
+      "canal": "enlace_ATM"
+    }
+  ]
+}

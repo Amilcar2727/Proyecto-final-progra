@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T13:33:05-05:00",
+  "title": "Design System: OptiFin",
+  "seededFrom": {
+    "id": "botanical-folio",
+    "name": "Botanical Field Plates",
+    "seed": "54bf0faf1c15d748"
+  },
+  "extensions": {
+    "colorMeta": {
+      "paper-ground": {
+        "role": "neutral",
+        "displayName": "Plate Ground",
+        "canonical": "#F8F6EF",
+        "tonalRamp": ["#4A493E", "#777361", "#969181", "#B2AC9B", "#CAC5B5", "#DDD8CB", "#ECE8DC", "#F8F6EF"]
+      },
+      "atlas-paper": {
+        "role": "neutral",
+        "displayName": "Atlas Paper",
+        "canonical": "#F3EFE3",
+        "tonalRamp": ["#5B574B", "#817B6B", "#A19A88", "#BBB49F", "#CEC8B3", "#DED8C7", "#ECE7DA", "#F3EFE3"]
+      },
+      "atlas-secondary": {
+        "role": "neutral",
+        "displayName": "Atlas Secondary",
+        "canonical": "#E9E4D5",
+        "tonalRamp": ["#59584F", "#7E7B6C", "#9E9A86", "#BAB59F", "#CEC8B3", "#DFDAC9", "#EEEADD", "#F7F4EA"]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#26332D",
+        "tonalRamp": ["#26332D", "#3D4943", "#556159", "#6F7973", "#8A938E", "#AAB0AC", "#CCD0CE", "#ECEEEB"]
+      },
+      "streamlit-text": {
+        "role": "neutral",
+        "displayName": "Streamlit Ink",
+        "canonical": "#000F08",
+        "tonalRamp": ["#000F08", "#1D2A23", "#3D493F", "#5F695F", "#7D857F", "#A2A9A4", "#CBD0CC", "#EDF0EE"]
+      },
+      "muted-graphite": {
+        "role": "neutral",
+        "displayName": "Muted Graphite",
+        "canonical": "#657168",
+        "tonalRamp": ["#657168", "#778176", "#89938B", "#9EA69F", "#B4BAB6", "#C9CDC9", "#DFE1DF", "#F0F1EF"]
+      },
+      "leaf-green": {
+        "role": "primary",
+        "displayName": "Leaf Green",
+        "canonical": "#477653",
+        "tonalRamp": ["#21472E", "#31583C", "#477653", "#668D70", "#85A78D", "#A8C1AC", "#CCD9CE", "#EDF2EE"]
+      },
+      "clay-red": {
+        "role": "primary",
+        "displayName": "Clay Red",
+        "canonical": "#C75B3B",
+        "tonalRamp": ["#743722", "#994A31", "#C75B3B", "#D77A5F", "#E59A84", "#F0BBAA", "#F7D8CF", "#FCF0EC"]
+      },
+      "edge-gray": {
+        "role": "neutral",
+        "displayName": "Veil Gray",
+        "canonical": "#9AA69B",
+        "tonalRamp": ["#626A64", "#758078", "#8C978F", "#A5AFA7", "#BDC4BE", "#D0D4D1", "#E3E5E3", "#F3F4F2"]
+      },
+      "grid-gray": {
+        "role": "neutral",
+        "displayName": "Grid Gray",
+        "canonical": "#DCD9CF",
+        "tonalRamp": ["#77736A", "#918D82", "#AAA69A", "#C1BEAF", "#D3D0C3", "#E2DFD5", "#EEEBE2", "#F7F5EE"]
+      },
+      "warm-taupe": {
+        "role": "secondary",
+        "displayName": "Atlas Taupe",
+        "canonical": "#A07945",
+        "tonalRamp": ["#634928", "#7E6035", "#A07945", "#B89664", "#CBB184", "#DCCBA9", "#EBDFC7", "#F7F0E4"]
+      },
+      "blue-violet": {
+        "role": "secondary",
+        "displayName": "Dried Blue",
+        "canonical": "#557D9C",
+        "tonalRamp": ["#2E4A5E", "#3F647F", "#557D9C", "#7397AF", "#91AFC1", "#B1C5D1", "#D0DDE5", "#EDF2F5"]
+      },
+      "dried-rose": {
+        "role": "secondary",
+        "displayName": "Dried Rose",
+        "canonical": "#855F68",
+        "tonalRamp": ["#503943", "#694D56", "#855F68", "#A17C84", "#B99BA0", "#CDB8BB", "#E0D5D6", "#F3EEF0"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Streamlit Display",
+        "purpose": "Module page titles supplied by Streamlit."
+      },
+      "body": {
+        "displayName": "Streamlit Body",
+        "purpose": "App copy, prose, captions, and controls."
+      },
+      "label": {
+        "displayName": "Plotly and Chart Label",
+        "purpose": "Graph, legend, tick, and comparison-chart text."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Module Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Collapsed Streamlit sidebar navigation for the three financial-network modules.",
+      "html": "<aside class=\"ds-module-nav\"><strong>OptiFin</strong><small>Teoría de grafos aplicada a finanzas</small><hr><label><input type=\"radio\" checked> Comunidades</label><label><input type=\"radio\"> Red troncal</label><label><input type=\"radio\"> Distribución de liquidez</label><hr><small>Demostración académica · conjuntos sintéticos</small></aside>",
+      "css": ".ds-module-nav { width: 220px; background: #26332D; color: #F8F6EF; padding: 18px 16px; font-family: sans-serif; }.ds-module-nav strong { display:block; font-size:18px; }.ds-module-nav small { color:#D0D4D1; }.ds-module-nav hr { border:0; border-top:1px solid #657168; margin:14px 0; }.ds-module-nav label { display:block; margin:8px 0; }.ds-module-nav input { accent-color:#477653; }"
+    },
+    {
+      "name": "Standard Select",
+      "kind": "input",
+      "refersTo": "inputs-controls",
+      "description": "Native Streamlit select control for module algorithms and view choices.",
+      "html": "<label class=\"ds-select\"><span>Partición visible</span><select><option>Louvain</option><option>Componentes por umbral</option><option>Propagación de etiquetas</option></select></label>",
+      "css": ".ds-select { display:grid; gap:6px; max-width:260px; color:#26332D; font-family:sans-serif; }.ds-select span { font-size:13px; font-weight:600; }.ds-select select { width:100%; height:38px; border:1px solid #9AA69B; border-radius:4px; background:#F8F6EF; color:#26332D; padding:6px 10px; }.ds-select select:focus-visible { outline:2px solid #477653; outline-offset:2px; }"
+    },
+    {
+      "name": "Linked Data Table",
+      "kind": "card",
+      "refersTo": "linked-tables",
+      "description": "A full-width, index-free, single-row selection table linked to the network.",
+      "html": "<div class=\"ds-table\"><table><thead><tr><th>Cuenta</th><th>Tipo</th><th>Grado</th><th>Comunidad</th></tr></thead><tbody><tr class=\"selected\"><td>CTA-001</td><td>Cuenta</td><td>4</td><td>C-1</td></tr><tr><td>CTA-002</td><td>Cuenta</td><td>3</td><td>C-2</td></tr></tbody></table></div>",
+      "css": ".ds-table { width:100%; background:#F8F6EF; color:#26332D; font-family:Arial,sans-serif; font-size:12px; }.ds-table table { width:100%; border-collapse:collapse; }.ds-table th,.ds-table td { text-align:left; padding:8px 10px; border-bottom:1px solid #DCD9CF; }.ds-table th { font-weight:600; }.ds-table tr.selected { background:#E9E4D5; outline:2px solid #C75B3B; outline-offset:-2px; }"
+    },
+    {
+      "name": "Network Plate",
+      "kind": "custom",
+      "refersTo": "network-plates",
+      "description": "Registered graph canvas with circular nodes, weighted edges, persistent legend, and a clay selection state.",
+      "html": "<section class=\"ds-network\"><div class=\"ds-plate\"><i class=\"ds-edge one\"></i><i class=\"ds-edge two\"></i><i class=\"ds-node green\"></i><i class=\"ds-node blue\"></i><i class=\"ds-node selected\"></i></div><div class=\"ds-legend\"><span><i class=\"dot green\"></i>Comunidad 1</span><span><i class=\"dot blue\"></i>Comunidad 2</span><span><i class=\"dot clay\"></i>Seleccionada</span></div></section>",
+      "css": ".ds-network { max-width:620px; background:#F8F6EF; padding:12px; color:#26332D; font-family:Arial,sans-serif; }.ds-plate { position:relative; height:300px; border-bottom:1px solid #DCD9CF; }.ds-node { position:absolute; width:22px; height:22px; border-radius:50%; border:2px solid #F8F6EF; }.ds-node.green { left:22%; top:46%; background:#477653; }.ds-node.blue { left:52%; top:24%; background:#557D9C; }.ds-node.selected { left:70%; top:62%; background:#A07945; border:3px solid #C75B3B; }.ds-edge { position:absolute; height:2px; background:#9AA69B; transform-origin:left center; }.ds-edge.one { left:24%; top:49%; width:31%; transform:rotate(-34deg); }.ds-edge.two { left:54%; top:29%; width:23%; transform:rotate(55deg); background:#477653; }.ds-legend { display:flex; gap:18px; padding-top:10px; font-size:11px; }.ds-legend span { display:flex; align-items:center; gap:5px; }.dot { width:8px;height:8px;border-radius:50%; }.dot.green{background:#477653}.dot.blue{background:#557D9C}.dot.clay{background:#C75B3B}"
+    },
+    {
+      "name": "Algorithm Comparison",
+      "kind": "custom",
+      "refersTo": "algorithm-comparisons",
+      "description": "Compact horizontal comparison chart for modularity or maximum-flow results.",
+      "html": "<figure class=\"ds-comparison\"><figcaption>Modularidad por algoritmo</figcaption><div class=\"ds-bar\"><span>Louvain</span><i style=\"width:82%\"></i><b>0.5919</b></div><div class=\"ds-bar\"><span>Umbral</span><i style=\"width:58%\"></i><b>0.4210</b></div><div class=\"ds-bar\"><span>Propagación</span><i style=\"width:64%\"></i><b>0.4670</b></div></figure>",
+      "css": ".ds-comparison { background:#F8F6EF; margin:0; padding:12px; color:#26332D; font-family:Arial,sans-serif; }.ds-comparison figcaption { font-size:16px; font-weight:600; margin-bottom:10px; }.ds-bar { display:grid; grid-template-columns:110px 1fr 58px; align-items:center; gap:8px; min-height:28px; font-size:12px; }.ds-bar i { height:14px; background:#477653; }.ds-bar:nth-of-type(3) i { background:#A07945; }.ds-bar:nth-of-type(4) i { background:#557D9C; }.ds-bar b { font-weight:600; }"
+    },
+    {
+      "name": "Synthetic Status Caption",
+      "kind": "chip",
+      "refersTo": "status-caption",
+      "description": "Inline status language that names synthetic data and algorithm context.",
+      "html": "<p class=\"ds-status\"><b>Datos sintéticos</b> · semilla 42 · indicadores para revisión</p>",
+      "css": ".ds-status { margin:0; color:#657168; font-family:sans-serif; font-size:13px; }.ds-status b { color:#26332D; font-weight:600; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Botanical Field Plate",
+    "overview": "OptiFin presents financial-network algorithms as restrained, comparable scientific plates. Paper-like surfaces carry graphite text, leaf-green structure, and a small clay-red signal for selection or bottlenecks. The interface stays native to Streamlit: the app uses familiar navigation and controls rather than recreating dashboard furniture.\n\nThe main visual priority is the registered network. Its node positions remain stable across supported states, graph scale stays comparable within a view, and persistent legends explain community or node-type encoding. Tables sit with the graph or directly below it as part of the analysis, not as detached decoration.",
+    "keyCharacteristics": [
+      "Paper ground with graphite and muted green labels",
+      "Leaf-green as the primary analytical structure",
+      "Clay red reserved for active or critical state",
+      "Stable, interactive network positions",
+      "Standard Streamlit density and controls"
+    ],
+    "rules": [
+      {
+        "name": "The Restrained Signal Rule",
+        "body": "Clay red, selected borders, and critical edges communicate state; they do not replace labels or legends.",
+        "section": "colors"
+      },
+      {
+        "name": "The Units Stay Visible Rule",
+        "body": "Financial figures use explicit `$`, USD captions, and 0–3 decimal precision appropriate to modularity or flow rather than relying on abbreviated numeric treatment.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Use no ambient shadow on the dashboard. Graph nodes use a paper border to separate them from the plot ground and a clay outline for selection.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Direct Geometry Rule",
+        "body": "Preserve circular nodes, horizontal legends, and thin borders. Do not introduce cards, ornamental containers, or hard offset shadows.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep node positions stable by supplying the same graph layout seed or explicit layer positions.",
+      "Do pair graph state with text and a persistent legend.",
+      "Do label every analytical dataset as synthetic.",
+      "Do keep community results as review indicators, never accusations or determinations.",
+      "Do use standard Streamlit controls and Python/Plotly implementations.",
+      "Do place result tables beside or immediately below the graph they explain."
+    ],
+    "donts": [
+      "Don't float summary metrics as detached decorative cards.",
+      "Don't replace graph colors with color alone; supply labels, captions, legends, or table text.",
+      "Don't use hard offset shadows or a dark app shell.",
+      "Don't introduce a new frontend stack or custom icon glyph system.",
+      "Don't canonize the mock's botanical eyebrow or decorative kicker treatments; they are not shipped by the application."
+    ]
+  }
+}
