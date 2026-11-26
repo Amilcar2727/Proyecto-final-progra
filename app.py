@@ -75,6 +75,46 @@ def show_data_error(error: Exception) -> None:
     st.stop()
 
 
+def resolve_module_params(
+    module_key: str,
+    pending_params: dict[str, Any],
+    *,
+    submitted: bool = False,
+) -> tuple[dict[str, Any], int]:
+    applied_key = f"{module_key}_applied_params"
+    rev_key = f"{module_key}_revision"
+
+    if applied_key not in st.session_state:
+        st.session_state[applied_key] = dict(pending_params)
+    if rev_key not in st.session_state:
+        st.session_state[rev_key] = 0
+
+    if submitted:
+        load_graph.clear()
+        load_dataset.clear()
+        st.session_state[applied_key] = dict(pending_params)
+        st.session_state[rev_key] += 1
+        st.toast("Resultados actualizados con los parámetros seleccionados.")
+
+    return st.session_state[applied_key], st.session_state[rev_key]
+
+
+def render_module_header(
+    module_key: str,
+    title: str,
+    subtitle: str,
+    pending_params: dict[str, Any],
+    submitted: bool,
+) -> tuple[dict[str, Any], int]:
+    st.title(title)
+    st.caption(subtitle)
+    return resolve_module_params(
+        module_key,
+        pending_params,
+        submitted=submitted,
+    )
+
+
 def selected_row(key: str, rows: list[dict[str, Any]]) -> Optional[dict[str, Any]]:
     state = st.session_state.get(key)
     selection = getattr(state, "selection", None)
@@ -188,34 +228,65 @@ def flow_positions(grafo: Graph) -> dict[str, tuple[float, float]]:
 
 
 def run_communities() -> None:
-    st.title("Comunidades financieras")
-    st.caption("Datos sintéticos · semilla 42 · indicadores para revisión")
-
     with st.sidebar:
-        st.subheader("Vista")
-        algorithm_label = st.selectbox(
-            "Partición visible",
-            ("Louvain", "Componentes por umbral", "Propagación de etiquetas"),
-        )
-        graph_label = st.selectbox("Red", ("Red analizada", "Red original"))
-        with st.expander("Ajustes de análisis"):
-            criterion_label = st.selectbox(
-                "Peso de las transferencias",
-                ("Combinado", "Monto", "Número de transferencias"),
+        with st.form(key="communities_form"):
+            st.subheader("Vista")
+            algorithm_label = st.selectbox(
+                "Partición visible",
+                ("Louvain", "Componentes por umbral", "Propagación de etiquetas"),
             )
-            window_days = st.slider("Ventana temporal (días)", 0, 90, 30)
-            hub_percentile = st.slider("Percentil de concentradores", 80, 100, 92)
-            hub_action_label = st.selectbox(
-                "Tratamiento de concentradores",
-                ("Excluir", "Limitar su peso"),
+            graph_label = st.selectbox("Red", ("Red analizada", "Red original"))
+            with st.expander("Ajustes de análisis"):
+                criterion_label = st.selectbox(
+                    "Peso de las transferencias",
+                    ("Combinado", "Monto", "Número de transferencias"),
+                )
+                window_days = st.slider("Ventana temporal (días)", 0, 90, 30)
+                hub_percentile = st.slider("Percentil de concentradores", 80, 100, 92)
+                hub_action_label = st.selectbox(
+                    "Tratamiento de concentradores",
+                    ("Excluir", "Limitar su peso"),
+                )
+                runs = st.slider("Corridas Louvain", 1, 10, 5)
+                threshold = st.slider("Umbral para línea base", 0.0, 10.0, 3.0, 0.5)
+            submitted = st.form_submit_button(
+                "Actualizar resultados",
+                type="primary",
+                use_container_width=True,
             )
-            runs = st.slider("Corridas Louvain", 1, 10, 5)
-            threshold = st.slider("Umbral para línea base", 0.0, 10.0, 3.0, 0.5)
-        criterion = {
-            "Combinado": "combinado",
-            "Monto": "monto",
-            "Número de transferencias": "transferencias",
-        }[criterion_label]
+
+    pending_params = {
+        "algorithm_label": algorithm_label,
+        "graph_label": graph_label,
+        "criterion_label": criterion_label,
+        "window_days": window_days,
+        "hub_percentile": hub_percentile,
+        "hub_action_label": hub_action_label,
+        "runs": runs,
+        "threshold": threshold,
+    }
+    params, revision = render_module_header(
+        "communities",
+        "Comunidades financieras",
+        "Datos sintéticos · semilla 42 · indicadores para revisión",
+        pending_params,
+        submitted,
+    )
+
+    algorithm_label = params["algorithm_label"]
+    graph_label = params["graph_label"]
+    criterion_label = params["criterion_label"]
+    window_days = params["window_days"]
+    hub_percentile = params["hub_percentile"]
+    hub_action_label = params["hub_action_label"]
+    runs = params["runs"]
+    threshold = params["threshold"]
+
+    criterion = {
+        "Combinado": "combinado",
+        "Monto": "monto",
+        "Número de transferencias": "transferencias",
+    }[criterion_label]
 
     try:
         graph = load_graph(COMMUNITY_DATA)
@@ -308,6 +379,7 @@ def run_communities() -> None:
                 height=520,
             ),
             use_container_width=True,
+            key=f"communities_network_{revision}",
             config={"displaylogo": False, "scrollZoom": True},
         )
     with reading_column:
@@ -365,21 +437,43 @@ def run_communities() -> None:
             colors=[GREEN, "#A07945", "#557D9C"],
         ),
         use_container_width=True,
+        key=f"communities_comparison_{revision}",
         config={"displaylogo": False},
     )
 
 
 def run_backbone() -> None:
-    st.title("Red troncal de menor costo")
-    st.caption("Datos sintéticos · Kruskal + Union-Find frente a Prim")
-
     with st.sidebar:
-        st.subheader("Vista")
-        algorithm_label = st.selectbox("Árbol visible", ("Kruskal", "Prim"))
-        with st.expander("Parámetros de optimización"):
-            horizon = st.slider("Horizonte operativo (meses)", 1, 60, 12)
-            alpha = st.slider("Peso del costo (α)", 0.1, 3.0, 1.0, 0.1)
-            beta = st.slider("Peso de latencia (β)", 0.0, 5.0, 0.0, 0.1)
+        with st.form(key="backbone_form"):
+            st.subheader("Vista")
+            algorithm_label = st.selectbox("Árbol visible", ("Kruskal", "Prim"))
+            with st.expander("Parámetros de optimización"):
+                horizon = st.slider("Horizonte operativo (meses)", 1, 60, 12)
+                alpha = st.slider("Peso del costo (α)", 0.1, 3.0, 1.0, 0.1)
+                beta = st.slider("Peso de latencia (β)", 0.0, 5.0, 0.0, 0.1)
+            submitted = st.form_submit_button(
+                "Actualizar resultados",
+                type="primary",
+                use_container_width=True,
+            )
+
+    pending_params = {
+        "algorithm_label": algorithm_label,
+        "horizon": horizon,
+        "alpha": alpha,
+        "beta": beta,
+    }
+    params, revision = render_module_header(
+        "backbone",
+        "Red troncal de menor costo",
+        "Datos sintéticos · Kruskal + Union-Find frente a Prim",
+        pending_params,
+        submitted,
+    )
+    algorithm_label = params["algorithm_label"]
+    horizon = params["horizon"]
+    alpha = params["alpha"]
+    beta = params["beta"]
 
     try:
         graph = load_graph(BACKBONE_DATA)
@@ -442,6 +536,7 @@ def run_backbone() -> None:
                 height=520,
             ),
             use_container_width=True,
+            key=f"backbone_network_{revision}",
             config={"displaylogo": False, "scrollZoom": True},
         )
     with reading_column:
@@ -488,25 +583,47 @@ def run_backbone() -> None:
         xaxis={"showgrid": False},
         font={"color": INK, "family": "Arial, sans-serif", "size": 12},
     )
-    st.plotly_chart(savings_chart, use_container_width=True, config={"displaylogo": False})
+    st.plotly_chart(
+        savings_chart,
+        use_container_width=True,
+        key=f"backbone_savings_{revision}",
+        config={"displaylogo": False},
+    )
 
 
 def run_liquidity() -> None:
-    st.title("Distribución de liquidez")
-    st.caption("Datos sintéticos · Dinic · verificación de flujo máximo y corte mínimo")
-
     with st.sidebar:
-        st.subheader("Vista")
-        view_label = st.selectbox("Red", ("Red completa", "Rutas críticas"))
-        with st.expander("Sensibilidad"):
-            delta = st.slider(
-                "Aumento de capacidad por ruta",
-                10000,
-                200000,
-                50000,
-                10000,
-                format="$%d",
+        with st.form(key="liquidity_form"):
+            st.subheader("Vista")
+            view_label = st.selectbox("Red", ("Red completa", "Rutas críticas"))
+            with st.expander("Sensibilidad"):
+                delta = st.slider(
+                    "Aumento de capacidad por ruta",
+                    10000,
+                    200000,
+                    50000,
+                    10000,
+                    format="$%d",
+                )
+            submitted = st.form_submit_button(
+                "Actualizar resultados",
+                type="primary",
+                use_container_width=True,
             )
+
+    pending_params = {
+        "view_label": view_label,
+        "delta": delta,
+    }
+    params, revision = render_module_header(
+        "liquidity",
+        "Distribución de liquidez",
+        "Datos sintéticos · Dinic · verificación de flujo máximo y corte mínimo",
+        pending_params,
+        submitted,
+    )
+    view_label = params["view_label"]
+    delta = params["delta"]
 
     try:
         graph = load_graph(LIQUIDITY_DATA)
@@ -622,6 +739,7 @@ def run_liquidity() -> None:
             height=500,
         ),
         use_container_width=True,
+        key=f"liquidity_network_{revision}",
         config={"displaylogo": False, "scrollZoom": True},
     )
 
@@ -672,7 +790,12 @@ def run_liquidity() -> None:
         xaxis={"showgrid": False},
         font={"color": INK, "family": "Arial, sans-serif", "size": 11},
     )
-    st.plotly_chart(agency_figure, use_container_width=True, config={"displaylogo": False})
+    st.plotly_chart(
+        agency_figure,
+        use_container_width=True,
+        key=f"liquidity_agency_{revision}",
+        config={"displaylogo": False},
+    )
 
     st.header("Comprobación de algoritmos")
     st.plotly_chart(
@@ -685,6 +808,7 @@ def run_liquidity() -> None:
             decimals=0,
         ),
         use_container_width=True,
+        key=f"liquidity_comparison_{revision}",
         config={"displaylogo": False},
     )
     st.caption(
@@ -717,7 +841,7 @@ def run_liquidity() -> None:
 st.set_page_config(
     page_title="OptiFin · Redes financieras",
     layout="wide",
-    initial_sidebar_state="collapsed",
+    initial_sidebar_state="expanded",
 )
 
 with st.sidebar:

@@ -1,18 +1,53 @@
+<div align="center">
+
 # OptiFin – Sistema de Análisis y Optimización de Redes Financieras
 
-**Programación III | Teoría de Grafos Aplicada a Finanzas**
+**Universidad Nacional de San Antonio Abad del Cusco (UNSAAC)**  
+*Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica*  
+*Escuela Profesional de Ingeniería Informática y de Sistemas*  
+
+**Asignatura:** Programación III (2026-II)  
+**Proyecto:** Sistema de Análisis y Optimización de Redes Financieras
+
+![Python](https://img.shields.io/badge/Python-3.11%2B-1E3A5F?style=flat-square&logo=python&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pruebas-33%2F33%20Pasan-2E7D32?style=flat-square&logo=pytest&logoColor=white)
+![Algoritmos](https://img.shields.io/badge/Algoritmos-Desde%20Cero-455A64?style=flat-square)
+![Interfaz](https://img.shields.io/badge/Interfaz-CLI%20%2B%20Streamlit-B7410E?style=flat-square)
+
+</div>
+
+---
+
+## Autores
+
+| Estudiante | Código |
+|---|---|
+| Amilcar Estacio Medrano | `200822` |
+| Kevin Heli Choquecahua Gutierrez | `245570` |
+| Jeliel Enrique Aramburu | `210927` |
+| Michael Augusto Baez Monge | `225418` |
+
+---
+
+## Vista Previa de la Interfaz
+
+<div align="center">
+  <img src="data/Preview.png" alt="Vista previa de OptiFin" width="90%" />
+</div>
 
 ---
 
 ## Descripción
 
-OptiFin modela redes financieras como grafos e implementa tres escenarios críticos del sector bancario usando **algoritmos implementados desde cero** en Python 3:
+**OptiFin** modela redes financieras mediante grafos e implementa tres escenarios críticos del sector bancario utilizando **algoritmos de teoría de grafos y optimización implementados íntegramente desde cero** en Python 3:
 
-| Módulo | Escenario | Algoritmo Principal |
-|---|---|---|
-| 2 | Detección de comunidades (fraude / lavado) | **Louvain** con multi-semilla |
-| 3 | Red troncal de menor costo | **Kruskal + Union-Find** |
-| 4 | Distribución de liquidez – cuellos de botella | **Dinic** + Corte Mínimo |
+| Módulo | Escenario Operativo | Algoritmo Principal | Alternativas Comparadas |
+|---|---|---|---|
+| **Módulo 1** | Gestión, validación y modelamiento de redes | Lista de adyacencia (`Graph`, `Node`, `Edge`) | — |
+| **Módulo 2** | Detección de comunidades (fraude y lavado de activos) | **Louvain** con ejecución multi-semilla | Umbral (BFS + Union-Find), Propagación de Etiquetas (LPA) |
+| **Módulo 3** | Diseño de red troncal de menor costo | **Kruskal + Union-Find** | Prim con min-heap binario |
+| **Módulo 4** | Distribución de liquidez y cuellos de botella | **Dinic** + Corte Mínimo | Edmonds-Karp, Ford-Fulkerson (DFS) |
+| **Módulo 5** | Evaluación empírica, benchmarks y validación | `perf_counter` + `tracemalloc` + pendiente log-log | Oráculos cruzados con NetworkX |
 
 ---
 
@@ -22,104 +57,105 @@ OptiFin modela redes financieras como grafos e implementa tres escenarios críti
 pip install -r requirements.txt
 ```
 
-**Dependencias:** `matplotlib`, `networkx` (solo visualización y oráculos de test), `pytest`, `pytest-cov`.
+**Dependencias principales:** `matplotlib`, `networkx` (exclusivamente para layouts visuales y oráculos independientes en pruebas), `pytest`, `pytest-cov`, `streamlit`, `plotly`, `pandas`.
 
-La interfaz web local usa `streamlit` y `plotly`. NetworkX se utiliza únicamente para ubicar los nodos en los diagramas; el análisis sigue usando los algoritmos propios del proyecto.
-
-> **Nota:** `networkx` **no** se usa para resolver ningún problema. Solo para verificación cruzada en tests y visualización de layouts.
+> **Nota metodológica:** `networkx` **no** se utiliza para resolver ningún problema algorítmico. Todos los algoritmos (BFS, DFS, Union-Find, Tarjan low-link, Louvain, LPA, Kruskal, Prim, Dinic, Edmonds-Karp y Ford-Fulkerson) están implementados desde cero en `src/algoritmos/`.
 
 ---
 
 ## Uso Rápido
 
 ```bash
-# Generar datos sintéticos reproducibles
+# 1. Generar datos sintéticos reproducibles (semilla fija)
 python scripts/generar_datos.py
 
-# Demo completa de los 3 módulos (no interactiva)
+# 2. Ejecutar demostración completa de todos los módulos (no interactiva)
 python main.py --demo
 
-# Menú interactivo
+# 3. Ejecutar menú interactivo en terminal
 python main.py
 
-# Interfaz local para explorar los grafos y gráficos
+# 4. Lanzar interfaz gráfica web local (Streamlit + Plotly)
 streamlit run app.py
 
-# Módulo específico con datos personalizados
+# 5. Ejecutar módulos individuales con datos personalizados
 python main.py --modulo 2
 python main.py --modulo 3 --datos data/red_troncal.json
 python main.py --modulo 4 --datos data/distribucion_liquidez.json
 
-# Benchmarks de rendimiento
+# 6. Ejecutar benchmarks de rendimiento y escalabilidad
 python main.py --benchmark
 
-# Ejecutar toda la suite de pruebas
+# 7. Generar gráficas de complejidad algorítmica en reports/
+python scripts/graficar_complejidad.py
+
+# 8. Ejecutar suite completa de pruebas automatizadas
 pytest -v
 ```
 
 ---
 
-## Resultados Destacados (seed=42)
+## Resultados Destacados (`seed=42`)
 
-| Métrica | Valor |
-|---|---|
-| Modularidad Louvain (red de fraude) | Q = 0.5919 |
-| Estabilidad multi-semilla | 100% |
-| Ahorro en red troncal vs. red completa | \$108,437 (59.2%) |
-| Flujo máximo distribución | \$1,825,000 |
-| Teorema Max-Flow / Min-Cut | ✓ Verificado |
-| Pruebas automatizadas | **30/30 PASAN** |
+| Escenario | Métrica | Resultado Obtenido |
+|---|---|---|
+| **Módulo 2 – Comunidades** | Modularidad Louvain ($Q$) | `0.5919` |
+| **Módulo 2 – Comunidades** | Estabilidad multi-semilla | `100.0%` |
+| **Módulo 3 – Red Troncal** | Ahorro frente a red completa | `\$108,437.71` (`59.2%`) |
+| **Módulo 4 – Liquidez** | Flujo máximo distribuido | `\$1,825,000.00` |
+| **Módulo 4 – Liquidez** | Teorema Max-Flow / Min-Cut | Verificado (`Flujo == Corte`) |
+| **Módulo 5 – Pruebas** | Suite automatizada (`pytest`) | **33/33 PASAN** |
 
 ---
 
 ## Estructura del Repositorio
 
-```
+```text
 proyecto_optifin/
-├── main.py                        # Punto de entrada
-├── requirements.txt
-├── data/                          # Datasets sintéticos
-│   ├── transacciones.json         # Red de fraude (Módulo 2)
-│   ├── red_troncal.json           # Infraestructura (Módulo 3)
-│   └── distribucion_liquidez.json # Efectivo (Módulo 4)
-├── scripts/generar_datos.py       # Generador reproducible
+├── main.py                             # CLI interactiva y no interactiva
+├── app.py                              # Interfaz web interactiva (Streamlit)
+├── requirements.txt                    # Dependencias del proyecto
+├── data/                               # Datasets sintéticos y vista previa
+│   ├── transacciones.json              # Red transaccional (Módulo 2)
+│   ├── red_troncal.json                # Red de infraestructura (Módulo 3)
+│   ├── distribucion_liquidez.json      # Red de efectivo (Módulo 4)
+│   ├── Preview.png                     # Captura de la interfaz gráfica
+│   └── README_datos.md                 # Documentación de formatos y campos
+├── scripts/
+│   ├── generar_datos.py                # Generador reproducible de datos
+│   └── graficar_complejidad.py         # Generador de gráficas de complejidad
 ├── src/
-│   ├── graph.py                   # Estructura Graph, Node, Edge
-│   ├── gestion_red.py             # Carga CSV/JSON y validación
-│   ├── analisis_transacciones.py  # Orquestador Módulo 2
-│   ├── enrutamiento_financiero.py # Orquestador Módulo 3
-│   ├── distribucion_liquidez.py   # Orquestador Módulo 4
-│   ├── evaluacion_resultados.py   # Benchmarks y validación (Módulo 5)
-│   └── algoritmos/
-│       ├── union_find.py          # Union-Find O(α N)
-│       ├── recorridos.py          # BFS, DFS, puentes
-│       ├── comunidades.py         # Louvain, LPA, Umbral, Modularidad
-│       ├── arbol_expansion.py     # Kruskal, Prim
-│       └── flujo.py               # Dinic, Edmonds-Karp, Ford-Fulkerson
-├── tests/                         # 30 pruebas con oráculos NetworkX
-├── reports/                       # Reportes Markdown generados
+│   ├── graph.py                        # Estructura común (Graph, Node, Edge)
+│   ├── gestion_red.py                  # Carga CSV/JSON y validación estricta/tolerante
+│   ├── analisis_transacciones.py       # Orquestador del Módulo 2
+│   ├── enrutamiento_financiero.py      # Orquestador del Módulo 3
+│   ├── distribucion_liquidez.py        # Orquestador del Módulo 4
+│   ├── evaluacion_resultados.py        # Benchmarks y casos adversarios (Módulo 5)
+│   ├── visualizacion.py                # Gráficos estáticos (Matplotlib)
+│   ├── dashboard_visualization.py      # Gráficos interactivos (Plotly)
+│   ├── utils.py                        # Utilidades transversales
+│   └── algoritmos/                     # Algoritmos puros e independientes
+│       ├── union_find.py               # Union-Find O(α(N))
+│       ├── recorridos.py               # BFS, DFS, puentes y articulaciones
+│       ├── comunidades.py              # Louvain, LPA, Umbral, Modularidad
+│       ├── arbol_expansion.py          # Kruskal y Prim
+│       └── flujo.py                    # Dinic, Edmonds-Karp, Ford-Fulkerson
+├── tests/                              # 33 pruebas unitarias y oráculos NetworkX
+├── reports/                            # Reportes Markdown y gráficas PNG generadas
 └── docs/
-    ├── decisiones.md              # Decisiones de diseño justificadas
-    ├── justificacion_algoritmos.md# Análisis técnico de algoritmos
-    └── informe.md                 # Informe final
+    ├── decisiones.md                   # Decisiones de diseño y supuestos
+    ├── justificacion_algoritmos.md     # Análisis técnico y complejidad
+    └── informe.md                      # Informe técnico final
 ```
 
 ---
 
-## Garantías de Correctitud
+## Garantías de Correctitud y Gráficas de Complejidad
 
-Todos los algoritmos propios son verificados contra oráculos de NetworkX:
+Todos los algoritmos propios son validados frente a oráculos independientes de **NetworkX**:
 
-- `networkx.minimum_spanning_tree` → Kruskal y Prim (tolerancia relativa 10⁻⁵)
-- `networkx.maximum_flow` y `minimum_cut` → Dinic, Edmonds-Karp, Ford-Fulkerson
-- `networkx.algorithms.community.modularity` → función `calcular_modularidad`
+- `networkx.minimum_spanning_tree` → Kruskal y Prim (tolerancia relativa $10^{-5}$)
+- `networkx.maximum_flow` y `networkx.minimum_cut` → Dinic, Edmonds-Karp y Ford-Fulkerson
+- `networkx.algorithms.community.modularity` → `calcular_modularidad`
 
----
-
-## Gráficas de Complejidad Algorítmica
-
-```bash
-python scripts/graficar_complejidad.py
-```
-
-Genera en `reports/` las gráficas de complejidad teórica, benchmarks empíricos con pendiente log-log y uso de memoria pico (`complejidad_teorica.png`, `benchmark_mst.png`, `benchmark_flujo.png`, `benchmark_comunidades.png`, `resumen_complejidades.png`).
+Al ejecutar `python scripts/graficar_complejidad.py`, se generan en `reports/` las curvas teóricas, benchmarks empíricos con pendiente log-log ($\alpha$) y perfiles de memoria pico (`complejidad_teorica.png`, `benchmark_mst.png`, `benchmark_flujo.png`, `benchmark_comunidades.png`, `resumen_complejidades.png`).

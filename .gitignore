@@ -22,6 +22,11 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+.impeccable/
+PRODUCT.md
+DESIGN.md
+docs/decisiones.md
+docs/informe.md
 
 # Testing & Coverage
 .pytest_cache/
